@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HongPhuc</title>
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-1.9.1.js"></script>
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+        <script>
+            jQuery(document).ready(function($) {
+                //selector đến menu cần làm việc
+                var TopFixMenu = $(".ubea-nav");
+                // dùng sự kiện cuộn chuột để bắt thông tin đã cuộn được chiều dài là bao nhiêu.
+                $(window).scroll(function(){
+                    // Nếu cuộn được hơn 150px rồi
+                    if($(this).scrollTop()>150){
+                        // Tiến hành show menu ra
+                        TopFixMenu.css({'position':'fixed'});
+                    }else{
+                        // Ngược lại, nhỏ hơn 150px thì hide menu đi.
+                        TopFixMenu.css({'position':'relative'});
+                    }}
+                )
+            })
+        </script>
+	</head>
+	<body>
+		
+	<div class="ubea-loader"></div>
+	
+	<div id="page">
+	<nav class="ubea-nav" role="navigation">
+		<div class="ubea-container">
+			<div class="row">
+				<div class="col-sm-2 col-xs-12">
+					<div id="ubea-logo"><a href="index.html"><em>Cộng Đồng Công Nghệ </em></a></div>
+				</div>
+				<div class="col-xs-10 text-center menu-1 main-nav">
+					<ul>
+						<li class="active"><a href="#" data-nav-section="home">Trang Chủ</a></li>
+						<li><a href="#"  data-nav-section="DienDan">Kho tài liệu </a></li>
+						<li><a href="#" data-nav-section="about">Giới Thiệu</a></li>
+						<li><a href="#" data-nav-section="faq">Câu hỏi thường gặp</a></li>
+
+<!--
+							<li class="col-xs-10 text-right menu-1 main-nav dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Xin chào:&nbsp;<?php echo $_SESSION['username'] ?> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-gear"></i>Đổi mật khẩu</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="?logout=yes"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+									</li>
+								</ul>
+
+							</li>
+							-->
+					</ul>
+                </div>
+				<div class="nav navbar-right top-nav">
+					<div class="box">
+						<div class="navbar-right container-1">
+							<span class="icon"><i class="fa fa-search"></i></span>
+							<input type="search" id="search" placeholder="Search..." />
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</nav>
+
+	<div id="ubea-hero" class="js-fullheight"  data-section="home">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url(images/img_bg_1.jpg);">
+		   		<div class="overlay"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2></h2>
+		   					<p><a href="#" target="_blank" class="btn btn-primary btn-lg">Follow phuctp14@gmail.com</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/img_bg_2.jpg);">
+		   		<div class="overlay"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Sign in now !</h2>
+		   					<p><a href="admin/Account/sign_in.php" class="btn btn-primary btn-lg">Sign In</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/img_bg_3.jpg);">
+		   		<div class="overlay"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Create new account </h2>
+		   					<p><a href="admin/Account/register.php" class="btn btn-primary btn-lg">Sign Up</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		  	</ul>
+	  	</div>
+	</div>
+
+	<div class="ubea-section-overflow">
+
+		<div class="ubea-section" id="ubea-services" data-section="DienDan">
+			<div class="ubea-container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="ubea-heading">
+							<h2 class="ubea-left">Kho tài liệu </h2>
+							<p>Chào mừng mọi người đến với diễn đàn công nghệ nơi chúng ta có thể chia sẻ và tìm kiếm tài liệu chuyên ngành công nghệ .</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-umbrella"></i>
+									</span>
+									<div class="feature-copy">
+										<a href="admin/repository/project.php" ><h3>Đồ án tốt nghiệp </h3></a>
+										<p>Nơi chia sẻ các đồ án các đề tài nghiên cứu của các nhà khoa học tương lai,...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-layers"></i>
+									</span>
+									<div class="feature-copy">
+										<a href="#" ><h3>Cơ sở dữ liệu</h3></a>
+										<p>Nơi chia sẻ các tài liệu thuộc lĩnh vực cơ sở dữ liệu giáo trình bài tập ,...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-monitor"></i>
+									</span>
+									<div class="feature-copy">
+										<a href="#" ><h3>Lập trình WEB</h3></a>
+										<p>Nơi chia sẻ thảo luận tài liệu, kiến thức chuyên ngành lập trình web,...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box" data-animate-effect="fadeIn">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-pencil"></i>
+									</span>
+									<div class="feature-copy">
+										<a href="#" ><h3>Tin học văn phòng</h3></a>
+										<p>Nơi chia sẻ vào thảo luận về lĩnh vực tin văn phòng word,excel,powerpoint,...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-cog"></i>
+									</span>
+									<div class="feature-copy">
+										<a href="#" ><h3>Khoa học dữ liệu</h3></a>
+										<p>Nơi chia sẻ và thảo luận xoay quanh các vấn đề về khoa học dữ liệu, trí tuệ nhân tạo,...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-layers"></i>
+									</span>
+									<div class="feature-copy">
+										<a href="#" ><h3>Các chủ đề khác</h3></a>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ubea-section" id="ubea-portfolio" data-section="portfolio">
+			<div class="ubea-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
+						<h2>Portfolio</h2>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<a href="images/img_2.jpg" class="ubea-card-item image-popup" title="Project name here.">
+							<figure>
+								<div class="overlay"><i class="ti-plus"></i></div>
+								<img src="images/img_2.jpg" alt="Image" class="img-responsive">
+							</figure>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="images/img_1.jpg" class="ubea-card-item image-popup" title="Project name here.">
+							<figure>
+								<div class="overlay"><i class="ti-plus"></i></div>
+								<img src="images/img_1.jpg" alt="Image" class="img-responsive">
+							</figure>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="images/img_3.jpg" class="ubea-card-item image-popup" title="Project name here.">
+							<figure>
+								<div class="overlay"><i class="ti-plus"></i></div>
+								<img src="images/img_3.jpg" alt="Image" class="img-responsive">
+							</figure>
+						</a>
+					</div>
+
+					<div class="col-md-4">
+						<a href="images/img_4.jpg" class="ubea-card-item image-popup" title="Project name here.">
+							<figure>
+								<div class="overlay"><i class="ti-plus"></i></div>
+								<img src="images/img_4.jpg" alt="Image" class="img-responsive">
+							</figure>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="images/img_5.jpg" class="ubea-card-item image-popup" title="Project name here.">
+							<figure>
+								<div class="overlay"><i class="ti-plus"></i></div>
+								<img src="images/img_5.jpg" alt="Image" class="img-responsive">
+							</figure>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="images/img_6.jpg" class="ubea-card-item image-popup" title="Project name here.">
+							<figure>
+								<div class="overlay"><i class="ti-plus"></i></div>
+								<img src="images/img_6.jpg" alt="Image" class="img-responsive">
+							</figure>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+		<div class="ubea-section" id="ubea-faq" data-section="faq">
+			<div class="ubea-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
+						<h2>Frequently Ask Questions</h2>
+						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+
+						<div class="ubea-accordion">
+							<div class="ubea-accordion-heading">
+								<div class="icon"><i class="icon-cross"></i></div>
+								<h3>What is uBeasa?</h3>
+							</div>
+							<div class="ubea-accordion-content">
+								<div class="inner">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur.</p>
+								</div>
+							</div>
+						</div>
+						<div class="ubea-accordion">
+							<div class="ubea-accordion-heading">
+								<div class="icon"><i class="icon-cross"></i></div>
+								<h3>I have technical problem, who do I email?</h3>
+							</div>
+							<div class="ubea-accordion-content">
+								<div class="inner">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+								</div>
+							</div>
+						</div>
+						<div class="ubea-accordion">
+							<div class="ubea-accordion-heading">
+								<div class="icon"><i class="icon-cross"></i></div>
+								<h3>How do I use uBeasa features?</h3>
+							</div>
+							<div class="ubea-accordion-content">
+								<div class="inner">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur.</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-6">
+
+						<div class="ubea-accordion">
+							<div class="ubea-accordion-heading">
+								<div class="icon"><i class="icon-cross"></i></div>
+								<h3>What language are available?</h3>
+							</div>
+							<div class="ubea-accordion-content">
+								<div class="inner">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+								</div>
+							</div>
+						</div>
+						<div class="ubea-accordion">
+							<div class="ubea-accordion-heading">
+								<div class="icon"><i class="icon-cross"></i></div>
+								<h3>Can I have a username that is already taken?</h3>
+							</div>
+							<div class="ubea-accordion-content">
+								<div class="inner">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+								</div>
+							</div>
+						</div>
+						<div class="ubea-accordion">
+							<div class="ubea-accordion-heading">
+								<div class="icon"><i class="icon-cross"></i></div>
+								<h3>Is uBeasa free?</h3>
+							</div>
+							<div class="ubea-accordion-content">
+								<div class="inner">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+    
+    <div id="ubea-blog" data-section="about">
+		<div class="ubea-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
+					<h2>About us</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+				</div>
+			</div>
+	    </div>
+    </div>
+      
+	<div id="ubea-contact" data-section="contact" class="ubea-cover ubea-cover-xs" style="background-image:url(images/img_bg_2.jpg);">
+		<div class="overlay"></div>
+		<div class="ubea-container">
+			<div class="row text-center">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="col-md-12">
+							<h3>If you have inqueries please email us at <a href="#">info@yourdomain.com</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="ubea-footer" role="contentinfo">
+		<div class="ubea-container">
+			
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">&copy; 2018 freshDesignweb. All Rights Reserved.</small> 
+						<small class="block">Designed by <a href="https://www.freshdesignweb.com/" target="_blank">freshDesignweb.com</a></small>
+					</p>
+					<p class="pull-right">
+						<ul class="ubea-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
