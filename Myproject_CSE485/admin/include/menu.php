@@ -1,17 +1,48 @@
 <?php include("header.php") ?>
 <div class="ubea-section-overflow">
 <div id="ubea-blog" data-section="about">
-    <div class="ubea-container">
-        <div class="row">
-            <div class="col-md-10 ubea-heading">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="ubea-heading">
-                            <h2 class="ubea-left"> <span class="icon"><i class="icon-layers"></i></span>   Kho Du lieu ca nhan</h2>
-                            <table>
+        <div class="ubea-container">
+            <div class="row">
+                <div class="col-md-10 ubea-heading">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="ubea-heading">
 
-                            </table>
+                                <h2 class="ubea-left"> <span class="icon"><i class="icon-layers"></i></span>   Kho Du lieu ca nhan</h2>
+                                <table>
+
+                                </table>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ubea-container">
+    <div class="row">
+        <div class="col-md-10 ubea-heading">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="ubea-heading">
+                        <<div class="col-lg-4 ubea-heading ubea-left ">
+                            <a href="" class=" btn btn-default" ><span class="icon"><i class="fa fa-cloud-upload" aria-hidden="true"></i>  </i></span> Them moi </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ubea-container">
+<div class="row">
+    <div class="col-md-10 ubea-heading">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ubea-heading">
+                    <<div class="col-lg-4 ubea-heading ubea-left ">
+                        <a href="QuanTri.php" class=" btn btn-default" ><span class="icon"><i class="fa fa-cloud-upload" aria-hidden="true"></i>  </i></span> Trang Quan Tri </a>
                     </div>
                 </div>
             </div>

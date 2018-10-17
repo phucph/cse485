@@ -1,17 +1,14 @@
-
-<?php
-session_start();
+<?php session_start();
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: sign_in.php');
+    header('location: ../Account/sign_in.php');
 }
 
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header("location: sign_in.php");
+    header("location: ../Account/sign_in.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -65,24 +62,16 @@ if (isset($_GET['logout'])) {
             <a class="navbar-brand" href="#">QUẢN TRỊ HỆ THỐNG</a>
         </div>
         <!-- Top Menu Items -->
-        <ul class="nav navbar-right top-nav">
-
-
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Xin chào:&nbsp;<?php echo $_SESSION['username'] ?> <b class="caret"></b></a>
+        <ul class="navbar-right ">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user"></i> Xin chào:&nbsp;<?php echo $_SESSION['username'] ?>
+                    <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i>Đổi mật khẩu</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="?logout=yes"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li>
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-gear"></i>Đổi mật khẩu</a></li>
+                    <li><a href="?logout=yes"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
                 </ul>
-            </li>
+            </div>
         </ul>
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -182,7 +171,7 @@ if (isset($_GET['logout'])) {
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="../../js/jquery.js"></script>
+<script src="../../js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="../../js/bootstrap.min.js"></script>

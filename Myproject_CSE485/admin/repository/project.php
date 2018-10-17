@@ -28,7 +28,7 @@
                         </div>
                         <div class="ubea-accordion-content">
                             <div class="inner">
-                        <section id="contact" class="section bg-primary">
+                        <section id="contact" class=" hide me section bg-primary">
 
                                 <h2 class="text-center">Shoot a message!</h2>
                                 <div class="row">
