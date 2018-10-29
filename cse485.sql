@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2018 at 10:29 AM
+-- Generation Time: Oct 29, 2018 at 03:33 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -47,9 +46,7 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`acc_salt`, `acc_id`, `acc_usename`, `acc_pass`, `acc_fullname`, `acc_email`, `acc_image`, `acc_role`) VALUES
 ('', 1, 'PhucPH', '241198', 'Phan Hong Phuc', 'phuctp14@gmail.com', '', 1),
 ('', 2, 'admin', '1', 'admin', 'admin@wru.vn', '', 1),
-(' ¢¼†eIV©\"@çåƒf-ý‚mN', 3, 'admin1', '$2y$10$PSxjBaJXX1BkDxKnjQZizO5W8JdsXMBQbVtNuYNHay0', 'phuc', 'phucph62@wru.vn', '', 1),
-('¦áhmø¿jåÌÚ²ÓŸN$–û¨', 4, 'admin', '$2y$10$dovM35J5rUWjJ4Ua8EXy1elXsj.LZPV9Q/adFHGP.FU', 'phuc', 'phuctp14@gmail.com', '', 1),
-('¾–\",ì5ØNöÚ\rMòûrï´”', 5, 'phucc', '$2y$10$PaXZiKLwswWjLALd.904auLLsKV93DST595J.2Rpm5s', 'phuc phan hong', 'phucph62@wru.vn', '', 1);
+(' ¢¼†eIV©\"@çåƒf-ý‚mN', 3, 'admin1', '$2y$10$PSxjBaJXX1BkDxKnjQZizO5W8JdsXMBQbVtNuYNHay0', 'phuc', 'phucph62@wru.vn', '', 1);
 
 -- --------------------------------------------------------
 
@@ -64,33 +61,18 @@ CREATE TABLE `baiviet` (
   `bv_noidung` text,
   `bv_trangthai` int(1) DEFAULT NULL,
   `bv_anh` varchar(200) DEFAULT NULL,
-  `bv_anhthumb` varchar(200) DEFAULT NULL,
-  `bv_ordernum` int(10) DEFAULT NULL,
-  `bv_view` int(10) DEFAULT NULL,
+  `bv_file` varchar(200) DEFAULT NULL,
   `bv_ngaydang` date DEFAULT NULL,
-  `dm_id` int(11) DEFAULT NULL
+  `dm_id` int(11) DEFAULT NULL,
+  `acc_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `brand`
+-- Dumping data for table `baiviet`
 --
 
-CREATE TABLE `brand` (
-  `brand_id` int(11) NOT NULL,
-  `brand_name` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `brand`
---
-
-INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
-(1, 'Samsung'),
-(2, 'Sony'),
-(3, 'Motorola'),
-(4, 'Xiaomi');
+INSERT INTO `baiviet` (`bv_id`, `bv_title`, `bv_tomtat`, `bv_noidung`, `bv_trangthai`, `bv_anh`, `bv_file`, `bv_ngaydang`, `dm_id`, `acc_id`) VALUES
+(27, 'HongPhuc', 'tao bang cho co so du lieu 12', 'xin chao', 1, 'upload/Screenshot (10).png', 'upload/Screenshot (10).png', '2018-10-29', 7, 1);
 
 -- --------------------------------------------------------
 
@@ -113,10 +95,10 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`cm_id`, `cm_noidung`, `bv_id`, `acc_id`, `cm_subject`, `cm_date`, `parent_comment_id`) VALUES
-(1, ' ban nghi sao ', NULL, 1, 'hello', '2018-10-16 07:28:52', 0),
-(2, 'dada', NULL, 1, 'test', '2018-10-16 07:56:22', 0),
-(3, 'asa', NULL, 1, 'test', '2018-10-16 08:28:07', 0),
-(4, 'asada', NULL, 1, 'p02h00p00', '2018-10-16 08:39:47', 0);
+(106, 'chao phuc', NULL, 1, 'phuc', '2018-10-22 04:56:19', 0),
+(107, 'How are you?', NULL, 1, 'Question ?', '2018-10-22 05:10:04', 0),
+(126, 'a', NULL, 2, 'toi la', '2018-10-22 05:21:32', 0),
+(127, 'chao nha ', NULL, 1, 'phuc', '2018-10-22 06:01:43', 0);
 
 -- --------------------------------------------------------
 
@@ -135,41 +117,38 @@ CREATE TABLE `danhmucbaiviet` (
 --
 
 INSERT INTO `danhmucbaiviet` (`Dm_id`, `Dm_name`, `acc_id`) VALUES
-(1, 'Kho tài liệu', 1),
-(2, 'Đồ án tốt nghiệp', 2),
-(3, 'Cơ sở dữ liệu', 3),
-(4, 'Lập trình WEB', 4),
-(5, 'Tin học văn phòng', NULL),
-(6, 'Khoa học dữ liệu', NULL),
-(7, 'Các chủ đề khác', NULL);
+(1, 'Đồ án tốt nghiệp', 1),
+(2, 'Cơ sở dữ liệu', 1),
+(3, 'Lập trình WEB', 1),
+(4, 'Tin học văn phòng', 1),
+(5, 'Khoa học dữ liệu', 1),
+(6, 'Các chủ đề khác', 1),
+(7, 'Đồ án tốt nghiệp', 2),
+(8, 'Cơ sở dữ liệu', 2),
+(9, 'Lập trình WEB', 2),
+(10, 'Tin học văn phòng', 2),
+(11, 'Khoa học dữ liệu', 2),
+(12, 'Các chủ đề khác', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Table structure for table `nhatky`
 --
 
-CREATE TABLE `product` (
-  `product_id` int(11) NOT NULL,
-  `product_name` varchar(250) NOT NULL,
-  `brand_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`product_id`, `product_name`, `brand_id`) VALUES
-(1, 'Samsung Galaxy A9', 1),
-(2, 'Samsung Galaxy S7', 1),
-(3, 'Samsung Galaxy S6 edge', 1),
-(4, 'Xperia Z5 Premium', 2),
-(5, 'Xperia M5 Dual', 2),
-(6, 'Xperia C5 uplta', 2),
-(7, 'Moto G Turbo', 3),
-(8, 'Moto X Force', 3),
-(9, 'Redmi 3 Pro', 4),
-(10, 'Mi 5', 4);
+CREATE TABLE `nhatky` (
+  `nk_id` int(11) NOT NULL,
+  `nk_title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nk_tomtat` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nk_noidung` text COLLATE utf8_unicode_ci,
+  `nk_trangthai` int(1) DEFAULT NULL,
+  `nk_anh` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nk_file` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nk_ordernum` int(10) DEFAULT NULL,
+  `nk_view` int(10) DEFAULT NULL,
+  `nk_ngaydang` date DEFAULT NULL,
+  `bv_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -206,13 +185,8 @@ ALTER TABLE `account`
 --
 ALTER TABLE `baiviet`
   ADD PRIMARY KEY (`bv_id`),
-  ADD KEY `dm_id` (`dm_id`);
-
---
--- Indexes for table `brand`
---
-ALTER TABLE `brand`
-  ADD PRIMARY KEY (`brand_id`);
+  ADD KEY `dm_id` (`dm_id`),
+  ADD KEY `acc_id` (`acc_id`);
 
 --
 -- Indexes for table `comment`
@@ -227,14 +201,14 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `danhmucbaiviet`
   ADD PRIMARY KEY (`Dm_id`),
-  ADD UNIQUE KEY `Dm_name` (`Dm_name`),
   ADD KEY `acc_id` (`acc_id`);
 
 --
--- Indexes for table `product`
+-- Indexes for table `nhatky`
 --
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`product_id`);
+ALTER TABLE `nhatky`
+  ADD PRIMARY KEY (`nk_id`),
+  ADD KEY `bv_id` (`bv_id`);
 
 --
 -- Indexes for table `role`
@@ -250,37 +224,31 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `baiviet`
 --
 ALTER TABLE `baiviet`
-  MODIFY `bv_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `brand`
---
-ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `bv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `cm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT for table `danhmucbaiviet`
 --
 ALTER TABLE `danhmucbaiviet`
-  MODIFY `Dm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Dm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT for table `nhatky`
 --
-ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `nhatky`
+  MODIFY `nk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -296,6 +264,7 @@ ALTER TABLE `role`
 -- Constraints for table `baiviet`
 --
 ALTER TABLE `baiviet`
+  ADD CONSTRAINT `acc_id` FOREIGN KEY (`acc_id`) REFERENCES `account` (`acc_id`),
   ADD CONSTRAINT `baiviet_ibfk_1` FOREIGN KEY (`dm_id`) REFERENCES `danhmucbaiviet` (`Dm_id`);
 
 --
@@ -311,82 +280,11 @@ ALTER TABLE `comment`
 ALTER TABLE `danhmucbaiviet`
   ADD CONSTRAINT `danhmucbaiviet_ibfk_1` FOREIGN KEY (`acc_id`) REFERENCES `account` (`acc_id`);
 
-
 --
--- Metadata
+-- Constraints for table `nhatky`
 --
-USE `phpmyadmin`;
-
---
--- Metadata for table account
---
-
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'cse485', 'account', '[]', '2018-10-04 11:42:27');
-
---
--- Metadata for table baiviet
---
-
---
--- Metadata for table brand
---
-
---
--- Metadata for table comment
---
-
---
--- Metadata for table danhmucbaiviet
---
-
---
--- Metadata for table product
---
-
---
--- Dumping data for table `pma__table_uiprefs`
---
-
-INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'cse485', 'product', '{\"sorted_col\":\"`product`.`brand_id` ASC\"}', '2018-10-11 08:18:53');
-
---
--- Metadata for table role
---
-
---
--- Metadata for database cse485
---
-
---
--- Dumping data for table `pma__relation`
---
-
-INSERT INTO `pma__relation` (`master_db`, `master_table`, `master_field`, `foreign_db`, `foreign_table`, `foreign_field`) VALUES
-('cse485', 'account', 'acc_role', 'cse485', 'role', 'role_id');
-
---
--- Dumping data for table `pma__pdf_pages`
---
-
-INSERT INTO `pma__pdf_pages` (`db_name`, `page_descr`) VALUES
-('cse485', 'cse485account');
-
-SET @LAST_PAGE = LAST_INSERT_ID();
-
---
--- Dumping data for table `pma__table_coords`
---
-
-INSERT INTO `pma__table_coords` (`db_name`, `table_name`, `pdf_page_number`, `x`, `y`) VALUES
-('cse485', 'account', @LAST_PAGE, 256, 488),
-('cse485', 'role', @LAST_PAGE, 333, 113);
-SET FOREIGN_KEY_CHECKS=1;
+ALTER TABLE `nhatky`
+  ADD CONSTRAINT `nhatky_ibfk_1` FOREIGN KEY (`bv_id`) REFERENCES `baiviet` (`bv_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
